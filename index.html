@@ -150,8 +150,8 @@ function fillMaterialTypes(){
 
 function fillQualities(){
   $("quality").innerHTML = materialsDB[materialType]
-    .map((x,i) => `<option value="${i}">${x[0]}</option>`)
-    .join("");
+.map((x,i) => `<option value="${i}">${x[0].replace(/^(\d+)/,m=>m.replace(/\d/g,d=>"𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗"[d]))}</option>`)
+   .join("");
   $("quality").value = materialsDB[materialType].findIndex(x => x[0] === selected[0]);
 }
 
