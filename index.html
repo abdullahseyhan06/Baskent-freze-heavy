@@ -149,10 +149,8 @@ function fillMaterialTypes(){
 }
 
 function fillQualities(){
-  $("quality").innerHTML = materialsDB[materialType]
-    .map((x,i) => `<option value="${i}">${x[0]}</option>`).join("");
-  const idx = materialsDB[materialType].findIndex(x => x[0] === selected[0]);
-  $("quality").value = idx >= 0 ? idx : 0;
+$("quality").innerHTML = materialsDB[materialType].map((x,i) => `<option value="${i}">${x[0]}</option>`).join("");
+ $("quality").value = idx >= 0 ? idx : 0;
 }
 
 function updateDetail(){
